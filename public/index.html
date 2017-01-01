@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- ASSIGN ANGULAR MODULE -->
+<html ng-app="chatApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Chat App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheets/style.css"><!-- load css -->
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+<div class="wrapper">
+    <!-- MESSAGES SECTION -->
+    <div class="message-section">
+
+        <!-- loop over messages $scope.messages -->
+        <div class="message" ng-repeat="message in messages">
+            <div class="info">
+                <strong>user{{ message.user_id }} :</strong>
+                <span>{{ message.text }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM SECTION -->
+    <div class="write-new">
+        <form>
+            <input placeholder="Type your message here..." name="message" ng-model="formData.text"></input>
+            <button type="submit" ng-click="createMessage()">Send</button>
+        </form>
+    </div>
+</div>
+<!-- SCRIPT -->
+<script src="bower_components/angular/angular.min.js"></script><!-- load angular -->
+<script src="bower_components/ngstorage/ngStorage.min.js"></script><!-- load ngstorage -->
+<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+<script src="js/services/messages.js"></script> <!-- load our message service -->
+<script src="js/core.js"></script> <!-- load our main application -->
+
+</body>
+</html>

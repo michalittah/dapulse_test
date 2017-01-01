@@ -1,0 +1,18 @@
+{
+  "name": "chat",
+  "description": "simple chat application.",
+  "main": "server.js",
+  "authors": [
+    "Michal Ittah"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "ngstorage": "^0.3.11"
+  }
+}
